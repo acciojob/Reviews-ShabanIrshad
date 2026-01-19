@@ -5,7 +5,7 @@ const Review=({review})=>{
     return(
         <>
             <div className="review">
-                <h2 className='author'>{review.name}</h2>
+                <h2 id={`author-${review.id}`} className='author'>{review.name}</h2>
                 <p className='job'>{review.job}</p>
                 <img  className='person-img' src={review.image} alt='picture'/>
                 <p className='info'>{review.text}</p>
