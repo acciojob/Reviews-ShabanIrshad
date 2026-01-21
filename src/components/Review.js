@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Review=({review})=>{
+const Review=({review,handleNext,handlePrev,handleRandom})=>{
     // console.log(review);
     return(
         <>
@@ -9,9 +9,9 @@ const Review=({review})=>{
                 <p className='job'>{review.job}</p>
                 <img  className='person-img' src={review.image} alt='picture'/>
                 <p className='info'>{review.text}</p>
-                <button className='prev-btn'>Previous</button>
-                <button className='next-btn'> Next</button>
-                <button className='random-btn'>surprise me</button>
+                <button onClick={()=>handlePrev(review.id)} className='prev-btn'>Previous</button>
+                <button onClick={()=>handleNext(review.id)} className='next-btn'> Next</button>
+                <button onClick={()=>handleRandom()} className='random-btn'>surprise me</button>
             </div>
         </>
     );

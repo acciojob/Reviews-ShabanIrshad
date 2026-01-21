@@ -42,14 +42,45 @@ const App=()=>{
             'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
         },
     ];
+ 
     const [rev,setRev]=useState(review[0]);
+
+    const handleNext=(id)=>{
+        console.log('next',id);
+
+        let res=review.find((rew)=>rew.id===id+1);
+        if(res){
+            setRev(res);
+        }else{
+            return;
+        }
+        
+       
+    }
+    const handlePrev=(id)=>{
+        console.log('prev',id);
+        let res=review.find((rew)=>rew.id===id-1);
+         if(res){
+            setRev(res);
+        }else{
+            return;
+        }
+
+    }
+    const handleRandom=()=>{
+       let ind=(Math.floor(Math.random() * (review.length - 1 + 1)) + 1);
+       setRev(review[ind]);
+
+
+
+    }
 
     return(
         <>
             <main>
                 <section className='container'>
                     <h1 id='review-heading'>Our Reviews</h1>
-                    <Review review={rev}/>
+                    <Review review={rev} handleNext={handleNext} handlePrev={handlePrev} handleRandom={handleRandom}/>
                 </section>
             </main>
         </>

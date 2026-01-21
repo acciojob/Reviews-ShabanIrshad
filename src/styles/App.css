@@ -10,3 +10,12 @@ button{
     justify-content: center;
     align-items: center;
 }
+.review{
+    width:50%;
+    height:50vh;
+    margin:auto;
+}
+.container{
+    width:100vw;
+    height:100vh;
+}
